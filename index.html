@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-4 border-1">
                 <div class="sidePopup2">
-                    <div class="sidePopupToggler2" onclick="activateSidePopup()">
+                    <div class="sidePopupToggler2" onclick="activateSidePopup2()">
                         <span class="sidePopupTogglerContent2">
                             Daha fazla
                         </span>
@@ -52,13 +52,49 @@
                                 <span class="sidePopupItemText2">User</span>
                             </div>
                         </div>
-        
                     </div>
-        
                 </div>
             </div>
             <div class="col-4 border-1">
-
+                <div class="sidePopup3">
+                    <div class="sidePopupToggler3" onclick="activateSidePopup3()">
+                        <span class="sidePopupTogglerContent3">
+                            Daha fazla
+                        </span>
+                    </div>
+                    <div class="sidePopupContent3">
+                        <div class="col-6">
+                            <div class="sidePopupItem3">
+                                <i class="fa-regular fa-user"></i>
+                                <span class="sidePopupItemText3">User</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="sidePopupItem3">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="sidePopupItemText3">Cart</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="sidePopupItem3">
+                                <i class="fa-regular fa-heart"></i>
+                                <span class="sidePopupItemText3">Wishlist</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="sidePopupItem3">
+                                <i class="fa-solid fa-code-compare"></i>
+                                <span class="sidePopupItemText3">Compare</span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="sidePopupItem3">
+                                <i class="fa-regular fa-user"></i>
+                                <span class="sidePopupItemText3">User</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-4 border-1">
                 <nav class="circular-menu" id="menu">
@@ -95,8 +131,19 @@
 
     <script>
 
-        function activateSidePopup() {
+        function activateSidePopup2() {
             var popup = document.getElementsByClassName("sidePopupContent2")[0];
+            if (popup.classList.contains("active")) {
+                popup.classList.remove("active");
+                popup.classList.remove("row");
+            } else {
+                popup.classList.add("active");
+                popup.classList.add("row");
+            }
+        }
+
+        function activateSidePopup3() {
+            var popup = document.getElementsByClassName("sidePopupContent3")[0];
             if (popup.classList.contains("active")) {
                 popup.classList.remove("active");
                 popup.classList.remove("row");
