@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Menu</title>
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4 border-1">
+                <div class="sidePopup2">
+                    <div class="sidePopupToggler2" onclick="activateSidePopup()">
+                        <span class="sidePopupTogglerContent2">
+                            Daha fazla
+                        </span>
+                    </div>
+                    <div class="sidePopupContent2">
+                        <div class="col-12">
+                            <div class="sidePopupItem2">
+                                <i class="fa-regular fa-user"></i>
+                                <span class="sidePopupItemText2">User</span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="sidePopupItem2">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="sidePopupItemText2">Cart</span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="sidePopupItem2">
+                                <i class="fa-regular fa-heart"></i>
+                                <span class="sidePopupItemText2">Wishlist</span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="sidePopupItem2">
+                                <i class="fa-solid fa-code-compare"></i>
+                                <span class="sidePopupItemText2">Compare</span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="sidePopupItem2">
+                                <i class="fa-regular fa-user"></i>
+                                <span class="sidePopupItemText2">User</span>
+                            </div>
+                        </div>
+        
+                    </div>
+        
+                </div>
+            </div>
+            <div class="col-4 border-1">
+
+            </div>
+            <div class="col-4 border-1">
+                <nav class="circular-menu" id="menu">
+                    <div class="circle">
+                        <div class="sidePopupItem">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="sidePopupItemText">Cart</span>
+                        </div>
+                        <div class="sidePopupItem">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="sidePopupItemText">Cart</span>
+                        </div>
+                        <div class="sidePopupItem">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="sidePopupItemText">Cart</span>
+                        </div>
+                        <div class="sidePopupItem">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="sidePopupItemText">Cart</span>
+                        </div>
+                        <div class="sidePopupItem">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="sidePopupItemText">Cart</span>
+                        </div>
+                    </div>
+
+                    <a href="" class="menu-button">
+                        <i class="fa fa-bars fa-2x"></i>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function activateSidePopup() {
+            var popup = document.getElementsByClassName("sidePopupContent2")[0];
+            if (popup.classList.contains("active")) {
+                popup.classList.remove("active");
+                popup.classList.remove("row");
+            } else {
+                popup.classList.add("active");
+                popup.classList.add("row");
+            }
+        }
+
+        var items = document.querySelectorAll('.sidePopupItem');
+
+        for(var i = 0, l = items.length; i < l; i++) {
+        items[i].style.left = (50 - 35*Math.cos(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
+        
+        items[i].style.top = (50 + 35*Math.sin(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
+        }
+
+        document.querySelector('.menu-button').onclick = function(e) {
+            e.preventDefault(); document.querySelector('.circle').classList.toggle('open');
+            if (document.getElementById("menu").style.right == "-120px") {
+                document.getElementById("menu").style.right = "-240px"
+            } else {
+                document.getElementById("menu").style.right = "-120px"
+            }
+        }
+
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
